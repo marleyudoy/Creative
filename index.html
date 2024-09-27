@@ -6,7 +6,13 @@
     <!-- css link  -->
     <link rel="stylesheet" href="style.css" />
     <!-- font awsome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Creatve For You</title>
   </head>
   <body
@@ -21,7 +27,7 @@
             <img src="./images/logo.png" alt="" />
           </div>
           <ul
-            class="gap-6 pt-5 text-[16px] absolute top-0 left-0 bg-transparent dark:bg-dark md:dark:bg-white dark:text-white md:dark:text-black transition-all duration-300 -translate-x-[1000px] w-[300px] text-center md:translate-x-0 h-[100vh]  md:h-auto md:static md:w-auto md:flex md:flex-row md:pt-0"
+            class="gap-6 pt-5 text-[16px] absolute top-0 left-0 bg-transparent dark:bg-dark md:dark:bg-white dark:text-white md:dark:text-black transition-all duration-300 -translate-x-[1000px] w-[300px] text-center md:translate-x-0 h-[100vh] md:h-auto md:static md:w-auto md:flex md:flex-row md:pt-0"
             id="hamburger-menu"
           >
             <li class="mt-10 md:mt-0 hover:text-primary-color transition-all">
@@ -37,7 +43,7 @@
               <a href="#">Contact Us</a>
             </li>
             <div class="absolute top-0 right-0 p-3 text-[30px] md:hidden">
-              <i id="hide-hamburger" class="fas fa-close "></i>
+              <i id="hide-hamburger" class="fas fa-close"></i>
             </div>
           </ul>
           <div class="flex items-center gap-2">
@@ -610,6 +616,30 @@
       </div>
     </footer>
 
-    <script src="./main.js"></script>
+    <script>
+      // selector
+      const darkBtn = document.getElementById("dark-btn");
+      const darkBody = document.getElementById("dark-body");
+      const hamburgerBtn = document.getElementById("hamburger-btn");
+      const hamburgerMenu = document.getElementById("hamburger-menu");
+      const hideHamburger = document.getElementById("hide-hamburger");
+
+      // Event lesener
+      darkBtn.addEventListener("click", darkModeEnable);
+      hamburgerBtn.addEventListener("click", showHamburger);
+      hideHamburger.addEventListener("click", hideHamburgerFn);
+
+      // event function
+      function darkModeEnable() {
+        darkBody.classList.toggle("dark");
+      }
+      function showHamburger() {
+        hamburgerMenu.classList.toggle("-translate-x-[1000px]");
+      }
+
+      function hideHamburgerFn() {
+        hamburgerMenu.classList.add("-translate-x-[1000px]");
+      }
+    </script>
   </body>
 </html>
